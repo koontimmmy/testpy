@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photobooth Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Demo Mode Banner -->
+    <div id="demo-banner" class="demo-banner">
+        <span>🎭 DEMO MODE - การชำระเงินจะสำเร็จอัตโนมัติหลังจาก 8 วินาที</span>
+        <button id="close-demo-banner" class="close-demo-btn">×</button>
+    </div>
+    
+    <div id="app">
+        <!-- Payment Selection Page -->
+        <div id="payment-page" class="page active">
+            <div class="container">
+                <h1>เลือกวิธีชำระเงิน</h1>
+                <div class="payment-options">
+                    <button class="payment-btn" data-method="alipay">
+                        <img src="https://cdn.omise.co/assets/dashboard/images/alipay-logo.png" alt="Alipay">
+                        <span>Alipay</span>
+                    </button>
+                    <button class="payment-btn" data-method="wechat_pay">
+                        <img src="https://cdn.omise.co/assets/dashboard/images/wechat-pay-logo.png" alt="WeChat Pay">
+                        <span>WeChat Pay</span>
+                    </button>
+                    <button class="payment-btn" data-method="promptpay">
+                        <img src="https://cdn.omise.co/assets/dashboard/images/promptpay-logo.png" alt="PromptPay">
+                        <span>PromptPay</span>
+                    </button>
+                </div>
+                <div class="price">
+                    <h2>ราคา: ฿100</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Processing Page -->
+        <div id="payment-processing" class="page">
+            <div class="container">
+                <h1>กำลังประมวลผลการชำระเงิน</h1>
+                <div class="loader"></div>
+                <div id="payment-qr"></div>
+                <p>กรุณาสแกน QR Code เพื่อชำระเงิน</p>
+            </div>
+        </div>
+
+        <!-- Camera Page -->
+        <div id="camera-page" class="page">
+            <div class="container">
+                <h1>เตรียมตัวถ่ายรูป</h1>
+                <div class="camera-container">
+                    <video id="camera-video" autoplay playsinline></video>
+                    <canvas id="camera-canvas"></canvas>
+                </div>
+                <div class="countdown" id="countdown">10</div>
+                <div class="photo-count">รูปที่ <span id="photo-number">1</span> จาก 3</div>
+            </div>
+        </div>
+
+        <!-- Photo Selection Page -->
+        <div id="photo-selection" class="page">
+            <div class="container">
+                <h1>เลือกรูปที่ต้องการปริ้น</h1>
+                <div class="photo-grid">
+                    <div class="photo-option" data-photo="1">
+                        <img id="photo-1" src="" alt="Photo 1">
+                        <button class="select-btn">เลือกรูปนี้</button>
+                    </div>
+                    <div class="photo-option" data-photo="2">
+                        <img id="photo-2" src="" alt="Photo 2">
+                        <button class="select-btn">เลือกรูปนี้</button>
+                    </div>
+                    <div class="photo-option" data-photo="3">
+                        <img id="photo-3" src="" alt="Photo 3">
+                        <button class="select-btn">เลือกรูปนี้</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Printing Page -->
+        <div id="printing-page" class="page">
+            <div class="container">
+                <h1>กำลังปริ้นรูปของคุณ</h1>
+                <div class="printing-animation">
+                    <div class="printer-icon">🖨️</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <p>กรุณารอสักครู่ รูปของคุณจะออกมาแล้ว</p>
+            </div>
+        </div>
+
+        <!-- Success Page -->
+        <div id="success-page" class="page">
+            <div class="container">
+                <h1>เสร็จสิ้น!</h1>
+                <p>รูปของคุณปริ้นเรียบร้อยแล้ว</p>
+                <button id="restart-btn" class="btn-primary">เริ่มใหม่</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.omise.co/omise.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

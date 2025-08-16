@@ -1,0 +1,33 @@
+{
+  "name": "photobooth-demo",
+  "version": "1.0.0",
+  "description": "Automated photobooth web application with payment integration",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "client": "npx live-server --port=3000 --no-browser",
+    "build": "echo 'No build process needed for vanilla HTML/CSS/JS'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "photobooth",
+    "payment",
+    "omise",
+    "camera",
+    "printing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "omise": "^1.0.0"
+  }
+}
